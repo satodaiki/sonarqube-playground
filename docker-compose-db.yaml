@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  postgresql:
+    image: postgres:12
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - 61652:5432

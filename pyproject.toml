@@ -1,0 +1,29 @@
+[project]
+name = "sonarqube-playground"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "satodaiki", email = "banana5388@gmail.com" }
+]
+dependencies = [
+    "sqlalchemy>=2.0.25",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+hello = "sonarqube_playground:hello"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sonarqube_playground"]
