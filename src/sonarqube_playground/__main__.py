@@ -27,6 +27,11 @@ def get_car_id_by_year(year: int) -> int:
         .scalar_one()
 
 
+def test():
+    print("hello world")
+    pass
+
+
 r = get_car_id_by_year(2020)
 
 print(r)
