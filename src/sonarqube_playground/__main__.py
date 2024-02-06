@@ -21,10 +21,12 @@ engine = sa.create_engine(url)
 
 conn = engine.connect()
 
-year = 2021
+def get_car_id_by_year(year: int) -> int:
+    return conn \
+        .execute(sa.text(f"SELECT id FROM car WHERE year = {year}")) \
+        .scalar_one()
 
-r = conn \
-    .execute(sa.text(f"SELECT id FROM car WHERE year = {year}")) \
-    .scalar_one()
+
+r = get_car_id_by_year(2020)
 
 print(r)
